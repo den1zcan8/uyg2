@@ -33,7 +33,16 @@
 	}
 	if ($_POST["ekle"])
 	{
-		
+	if($_POST["uadi"]=="" || $_POST["umarkasi"]=="" || $_POST["ufiyati"]=="")
+		{
+			echo"Eksik bilgileri doldurunuz";
+		}
+		else
+		{
+			$dosya=fopen("urun.txt","a");
+			$yazilacak=$_POST["uadi"]."-".$_POST["umarkası"]."-".$_POST["ufiyati"].\n";
+			fputs($dosya,$yazilacak);
+			echo"********urunnun sisteme Kaydiniz Yapilmistir*********";	
 		
 		
 		
